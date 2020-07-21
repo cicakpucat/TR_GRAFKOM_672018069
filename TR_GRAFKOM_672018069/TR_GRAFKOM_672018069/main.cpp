@@ -10,7 +10,7 @@ int is_depth;
 bool mouseDown = false;
 
 void initGL() {
-	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
+	glClearColor(0.0f, 0.0f, 0.5f, 1.0f);
 	glClearDepth(5.0f);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_COLOR_MATERIAL);
@@ -32,48 +32,157 @@ void myDisplay() {
 	glPushMatrix();
 
 	glBegin(GL_POLYGON);
-	//lantai
+	//lantai gedung a
+	glColor3f(0, 0, 0);
+	glVertex3f(-15, 0, 0);
+	glVertex3f(-29, 0, 0);
+	glVertex3f(-30, 0, -3);
+	glVertex3f(-31, 0, -14);
+	glVertex3f(-18, 0, -17);
+	glVertex3f(-10, 0, -14);
+
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	//lantai gedung b
 	glColor3f(0, 0, 0);
 	glVertex3f(-10, 0, 0);
-	glVertex3f(10, 0, 0);
-	glVertex3f(15, 0, -8);
-	glVertex3f(8, 0, -14);
-	glVertex3f(-8, 0, -16);
+	glVertex3f(12, 0, 0);
+	glVertex3f(17, 0, -9);
+	glVertex3f(10, 0, -14);
+	glVertex3f(-4, 0, -16);
+	
+	glEnd();
+	
+	glBegin(GL_POLYGON);
+	//lantai gedung c
+	glColor3f(0, 0, 0);
+	glVertex3f(21, 0, 0);
+	glVertex3f(51, 0, 1);
+	glVertex3f(48, 0, -11);
+	glVertex3f(41, 0, -12);
+	glVertex3f(27, 0, -13);
 
 	glEnd();
 
 	glBegin(GL_QUADS);
+	//dinding a
+	//dinding depan
+	glColor3f(1, 1, 1);
+	glVertex3f(-15, 0, 0);
+	glVertex3f(-29, 0, 0);
+	glVertex3f(-29, 2, 0);
+	glVertex3f(-15, 2, 0);
+
+	//dinding serong kiri
+	glColor3f(1, 1, 1);
+	glVertex3f(-29, 0, 0);
+	glVertex3f(-30, 0, -3);
+	glVertex3f(-30, 2, -3);
+	glVertex3f(-29, 2, 0);
+
+	//dinding kiri
+	glColor3f(1, 1, 1);
+	glVertex3f(-30, 0, -3);
+	glVertex3f(-31, 0, -14);
+	glVertex3f(-31, 2, -14);
+	glVertex3f(-30, 2, -3);
+
+	//dinding belakang kiri 
+	glColor3f(1, 1, 1);
+	glVertex3f(-31, 0, -14);
+	glVertex3f(-18, 0, -17);
+	glVertex3f(-18, 2, -17);
+	glVertex3f(-31, 2, -14);
+
+	//dinding belakang samping kiri tadi
+	glColor3f(1, 1, 1);
+	glVertex3f(-18, 0, -17);
+	glVertex3f(-10, 0, -14);
+	glVertex3f(-10, 2, -14);
+	glVertex3f(-18, 2, -17);
+	
+	//dinding kanan
+	glColor3f(1, 1, 1);
+	glVertex3f(-10, 0, -14);
+	glVertex3f(-15, 0, 0);
+	glVertex3f(-15, 2, 0);
+	glVertex3f(-10, 2, -14);
+
+	//dinding b
 	//dinding depan
 	glColor3f(1, 1, 1);
 	glVertex3f(-10, 0, 0);
-	glVertex3f(10, 0, 0);
-	glVertex3f(10, 2, 0);
+	glVertex3f(12, 0, 0);
+	glVertex3f(12, 2, 0);
 	glVertex3f(-10, 2, 0);
 
-	glBegin(GL_QUADS);
 	//dinding kanan 1
 	glColor3f(1, 1, 1);
-	glVertex3f(10, 0, 0);
-	glVertex3f(15, 0, -8);
-	glVertex3f(15, 2, -8);
-	glVertex3f(10, 2, 0);
+	glVertex3f(12, 0, 0);
+	glVertex3f(17, 0, -9);
+	glVertex3f(17, 2, -9);
+	glVertex3f(12, 2, 0);
 
-	glBegin(GL_QUADS);
 	//dinding kanan 2
 	glColor3f(1, 1, 1);
-	glVertex3f(15, 0, -8);
-	glVertex3f(8, 0, -14);
-	glVertex3f(8, 2, -14);
-	glVertex3f(15, 2, -8);
+	glVertex3f(17, 0, -9);
+	glVertex3f(10, 0, -14);
+	glVertex3f(10, 2, -14);
+	glVertex3f(17, 2, -9);
 	
-	glBegin(GL_QUADS);
 	//dinding belakang
 	glColor3f(1, 1, 1);
-	glVertex3f(15, 0, -8);
-	glVertex3f(8, 0, -14);
-	glVertex3f(8, 2, -14);
-	glVertex3f(15, 2, -8);
+	glVertex3f(10, 0, -14);
+	glVertex3f(-4, 0, -16);
+	glVertex3f(-4, 2, -16);
+	glVertex3f(10, 2, -14);
+
+	//dinding kiri
+	glColor3f(1, 1, 1);
+	glVertex3f(-4, 0, -16);
+	glVertex3f(-10, 0, 0);
+	glVertex3f(-10, 2, 0);
+	glVertex3f(-4, 2, -16);
 	
+	//dinding c
+	//dinding depan
+	glColor3f(1, 1, 1);
+	glVertex3f(21, 0, 0);
+	glVertex3f(51, 0, 1);
+	glVertex3f(51, 2, 1);
+	glVertex3f(21, 2, 0);
+
+	//dinding depan miring
+	glColor3f(1, 1, 1);
+	glVertex3f(51, 0, 1);
+	glVertex3f(48, 0, -11);
+	glVertex3f(48, 2, -11);
+	glVertex3f(51, 2, 1);
+
+	//dinding kanan
+	glColor3f(1, 1, 1);
+	glVertex3f(48, 0, -11);
+	glVertex3f(41, 0, -12);
+	glVertex3f(41, 2, -12);
+	glVertex3f(48, 2, -11);
+
+	//dinding belakang miring
+	glColor3f(1, 1, 1);
+	glVertex3f(41, 0, -12);
+	glVertex3f(27, 0, -13);
+	glVertex3f(27, 2, -13);
+	glVertex3f(41, 2, -12);
+
+	//dinding belakang
+	glColor3f(1, 1, 1);
+	glVertex3f(27, 0, -13);
+	glVertex3f(21, 0, 0);
+	glVertex3f(21, 2, 0);
+	glVertex3f(27, 2, -13);
+
+
+
 	glEnd();
 
 
