@@ -44,6 +44,18 @@ void myDisplay() {
 	glEnd();
 
 	glBegin(GL_POLYGON);
+	//atap gedung a
+	glColor3f(0.5, 0, 0);
+	glVertex3f(-15, 2, 0);
+	glVertex3f(-29, 2, 0);
+	glVertex3f(-30, 2, -3);
+	glVertex3f(-31, 2, -14);
+	glVertex3f(-18, 2, -17);
+	glVertex3f(-10, 2, -14);
+
+	glEnd();
+
+	glBegin(GL_POLYGON);
 	//lantai gedung b
 	glColor3f(0, 0, 0);
 	glVertex3f(-10, 0, 0);
@@ -52,6 +64,17 @@ void myDisplay() {
 	glVertex3f(10, 0, -14);
 	glVertex3f(-4, 0, -16);
 	
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	//lantai gedung b
+	glColor3f(0.5, 0, 0);
+	glVertex3f(-10, 2, 0);
+	glVertex3f(12, 2, 0);
+	glVertex3f(17, 2, -9);
+	glVertex3f(10, 2, -14);
+	glVertex3f(-4, 2, -16);
+
 	glEnd();
 	
 	glBegin(GL_POLYGON);
@@ -62,6 +85,17 @@ void myDisplay() {
 	glVertex3f(48, 0, -11);
 	glVertex3f(41, 0, -12);
 	glVertex3f(27, 0, -13);
+
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	//lantai gedung c
+	glColor3f(0.5, 0, 0);
+	glVertex3f(21, 2, 0);
+	glVertex3f(51, 2, 1);
+	glVertex3f(48, 2, -11);
+	glVertex3f(41, 2, -12);
+	glVertex3f(27, 2, -13);
 
 	glEnd();
 
